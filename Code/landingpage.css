@@ -1,0 +1,63 @@
+*{
+    padding: 0;
+    margin: 0;
+    max-width: 1920px;
+
+}
+a{
+    text-decoration: none;
+}
+ul li {
+    list-style: none;
+}
+.header{
+    background-image: url(../Img/Background/Background_Content/Main_content.png);
+    background-repeat: no-repeat;
+    height: 1335px;
+    width: 100%;
+    color: #ECECEC;
+}
+.menu{
+    height: 135px;
+    background-image: url(../Img/Logo/logo_unicorn.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 126px;
+    background-position-x: 73px;
+    background-position-y: 23px;
+    
+    display: flex;
+    justify-content: right;
+    justify-self: center;
+
+    font-size: 32px;
+    font-weight: bold;
+}
+.list{
+    display: flex;
+    padding: 55px 45px 42px 0;
+}
+input[type=text]{
+    height: 70px;
+    width: 360px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #AFADAD;
+    border-radius: 30px;
+    padding-left: 40px;
+    margin: 36px;
+    
+}
+.content{
+    margin-top: 436px;
+    text-align: center;
+    font-size: 65px;
+}
+button[type=submit]{
+    width: 357px;
+    height: 93px;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 20px;
+    background-color: #E4E4E4;
+}
