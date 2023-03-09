@@ -1,15 +1,47 @@
+/* Setting chung */
 *{
     padding: 0;
     margin: 0;
     max-width: 1920px;
-
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+
 a{
     text-decoration: none;
+}
+a:hover{
+    color: dodgerblue;
+}
+button:hover{
+    background-color: #2D44BF;
+}
+.content_pc, .text_on_image ::after{
+    content: '';
+    height: 100%;
+    top: 0;
+    transition: .5s;
+}
+.content_pc :hover::after{
+    background: linear-gradient(to bottom, rgba(199, 0, 57, .01) 0, rgba(199, 0, 57, .25) 25%, 
+    rgba(199,0,57,.75) 75%), rgba(199, 0, 57, .95) 100%;
+}
+.text_on_image{
+    transform: all .5 cubic-bezier(.13,.62,.81,.91) 0s;
 }
 ul li {
     list-style: none;
 }
+hr{
+    /* Tạo CSS cho đường thẳng giữa PC và Laptop */
+    margin:auto;
+    text-align: center;
+    width: 1313px;
+    color: black;
+    border: 5px solid black;
+    border-radius: 5px;
+}
+/* Header */
 .header{
     background-image: url(../Img/Background/Background_Content/Main_content.png);
     background-repeat: no-repeat;
@@ -19,45 +51,294 @@ ul li {
 }
 .menu{
     height: 135px;
-    background-image: url(../Img/Logo/logo_unicorn.png);
-    background-repeat: no-repeat;
-    background-position: left;
-    background-size: 126px;
-    background-position-x: 73px;
-    background-position-y: 23px;
-    
+    background-image: linear-gradient(to bottom, #000000, #00000054);
+    /* Chỉnh màu nền cho menu */
     display: flex;
-    justify-content: right;
-    justify-self: center;
-
-    font-size: 32px;
-    font-weight: bold;
+    font-size: 31px;
+    font-weight: 700;
+}
+.logo > a >img {
+    width: 126px;
+    height: 97px;
+    margin: 23px 0 0 73px;
+    
 }
 .list{
     display: flex;
-    padding: 55px 45px 42px 0;
+    padding: 55px 0 42px 0;
+    margin: 0 61px 0 74px;
+
+}
+.list > li {
+    padding-right: 45px;
+
 }
 input[type=text]{
+    background-image: url(../Img/Logo/Search.png);
+    background-repeat: no-repeat;
+    background-position: 340px 12px;
+
     height: 70px;
-    width: 360px;
+    width: 400px;
+
     font-size: 32px;
-    font-weight: bold;
+    font-weight: 700;
     color: #AFADAD;
     border-radius: 30px;
-    padding-left: 40px;
+    
+    padding: 0 30px 0 40px;
     margin: 36px;
     
 }
+/* content */
 .content{
     margin-top: 436px;
-    text-align: center;
-    font-size: 65px;
+    text-align: center;  
 }
-button[type=submit]{
+.content h1{
+    font-weight: bold;
+    font-size: 96px;
+}
+.learn_more{
+    /* CSS phần learn more */
     width: 357px;
     height: 93px;
     font-size: 30px;
     font-weight: bold;
     border-radius: 20px;
     background-color: #E4E4E4;
+    margin-top: 46px;
+}
+
+/* main */
+.main {
+    background-image: url(../Img/Background/Background_Content/luoi_1.png);
+    background-repeat: no-repeat;
+    text-align: center;
+    height: 1813px;
+}
+.pc h3{
+    font-size: 55px;
+    padding-bottom: 92px;
+    font-weight: bold;
+}
+.font-color{
+color: #2D44BF;
+}
+.pc{
+    padding-top: 109px;
+}
+.list1{
+    /* Để cho ảnh xếp thành hàng ngang */
+    display: flex;
+    justify-content: space-evenly;  
+   
+}
+.content_pc{
+    /* Để cho chữ hiển thị trên ảnh  */
+    position: relative;
+    display: inline-block; 
+}
+.text_on_image{
+     /* Chữ hiển thị trên bức ảnh */
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+    color: #FFF9F9;
+    font-size: 40px;
+    font-weight: bold;
+}
+.view_more1{
+    /* CSS button view more */
+    width: 357px;
+    height: 93px;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 20px;
+    background-color: #000000;
+    color: white;
+    margin: 57.5px;
+}
+.overlay_color{
+    /* Cái màu nền ở những cái ảnh */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient( 112deg,  #00000080 63% , transparent 15%);
+
+}
+/* Laptop */
+.laptop{
+    padding-top: 56px;
+}
+.laptop h3{
+    font-size: 55px;
+    padding-bottom: 40px;
+    font-weight: bold;
+}
+.list2{
+    /* Để cho ảnh xếp thành hàng ngang */
+    display: flex;
+    justify-content: space-evenly;
+}
+.content_laptop{
+    /* Để cho chữ hiển thị trên ảnh  */
+    position: relative;
+    display: inline-block;
+}
+.text_on_image2{
+    /* Chữ hiển thị trên bức ảnh */
+    position: absolute;
+    top: 50%;
+    left: 39%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+    color: #FFF9F9;
+    font-size: 40px;
+    font-weight: bold;
+}
+.view_more2{
+    /* CSS button view more */
+    width: 357px;
+    height: 93px;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 20px;
+    background-color: #000000;
+    color: white;
+    margin: 59px;
+}
+/* nav */
+.nav{   
+    font-size: 0;
+}
+
+/* about */
+.about, .more{
+    display: inline-block;  
+    vertical-align: top;
+    height: 800px;
+}
+.about{
+    width: 856px;
+    text-align: center;
+    padding-top: 37px;
+    background-color: #525252;
+    color: #FFF9F9;
+}
+.about h1{
+    font-size: 64px;
+    padding-bottom: 72px;
+}
+.about p{
+    font-size: 30px;
+    text-align: left;
+    width: 770px;
+    margin: 0 auto;
+    
+}
+
+/* more */
+.more{
+    width: 1064px;
+    background-color: #0B0707C9;  
+    color: #FFF9F9; 
+}
+.more h1{
+    font-size: 45px;
+    text-align: center; 
+    padding: 32px 0 48px;
+}
+.grid{
+    display: grid;
+    grid-gap: 48px;
+    grid-template-columns: repeat(2,358px);
+    grid-template-rows: auto auto auto;
+    place-items: right;
+    justify-content: center;
+
+}
+.content_more{
+    width: 358px;
+    height: 175px; 
+    position: relative;
+    display: inline-block;  
+}
+.text_on_image3{
+    /* Chữ hiển thị trên bức ảnh */
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+    color: #FFF9F9;
+    font-size: 32px;
+    font-weight: bold;
+}
+.overlay_color1{
+    /* Cái màu nền ở những cái ảnh */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient( 117deg,  #00000080 70% , transparent 0%);
+
+}
+/* footer */
+.footer{
+    background-color: #1C1C1C;
+    color: #FFF9F9;
+}
+.footer h3{
+    font-weight: bold;
+    font-size: 35px;
+}
+/* more */
+.last{
+    padding-top: 91px;
+    font-size: 24px;
+
+    display: grid;
+    grid-gap: 100px;
+    grid-template-columns: repeat(4, 250px);
+    grid-template-rows: auto ;
+
+    justify-content: space-evenly;
+
+}
+
+/* social */
+.social{
+    height: 630px;
+    text-align: center;
+
+    padding-top: 15%;
+    font-size: 24px;
+}
+.list5{
+    display: grid;
+    grid-template-columns: repeat(7, 100px);
+    grid-template-rows: auto;
+    margin: 0 auto;
+    place-items: center center;
+    justify-content: center;
+}
+
+/* copyright */
+.copyright{
+height: 122px;
+color: #E4E4E4;
+font-size: 24px;
+font-weight: bold;
+background-color: #030303;
+
+display: flex;
+justify-content: center;
+align-items: center;
+
 }
