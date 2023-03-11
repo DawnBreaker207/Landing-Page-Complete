@@ -343,10 +343,33 @@ color: #2D44BF;
     height: 70px;
     border-radius: 50%;
     background: rgb(129, 129, 129);
+    position: relative;
+    overflow: hidden;
        
 }
-.list5 :hover{
+.social a img{
+    position: relative;
+    z-index: 10;
+}
+.social a:hover{
+    transform: translate(0, -10px);
+    transition: 0.3s;
+} 
+.social a::after{
+    content: '';
+    position: absolute;
+    top: -90px;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-image: linear-gradient(60deg, rgb(42, 36, 202), rgb(99, 99, 209));
+   transition: 0.5s;
+    overflow: hidden;
+   
+}
+.social a:hover::after{
+    top: 0;
+
 }
 
 /* copyright */
