@@ -118,7 +118,7 @@ input[type=text]{
     background-image: url(../Img/Background/Background_Content/luoi_1.png);
     background-repeat: no-repeat;
     text-align: center;
-    height: 1813px;
+    background-size: cover;
 }
 .pc h3{
     font-size: 55px;
@@ -213,7 +213,7 @@ color: #2D44BF;
     border-radius: 20px;
     background-color: #000000;
     color: white;
-    margin: 59px;
+    margin: 59px 0 103px;
 }
 /* nav */
 .nav{   
@@ -330,6 +330,23 @@ color: #2D44BF;
     margin: 0 auto;
     place-items: center center;
     justify-content: center;
+
+    margin-top: 30px;
+}
+.social img{
+    width: 40px;
+    height: 40px;
+    margin: 15px 0;
+}
+.social a{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: rgb(129, 129, 129);
+       
+}
+.list5 :hover{
+    background-image: linear-gradient(60deg, rgb(42, 36, 202), rgb(99, 99, 209));
 }
 
 /* copyright */
