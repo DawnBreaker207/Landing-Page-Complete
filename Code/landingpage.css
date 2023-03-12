@@ -13,29 +13,11 @@ html{
 a{
     text-decoration: none;
 }
-a:hover{
-    color: dodgerblue;
-}
-button:hover{
-    background-color: #2D44BF;
-}
-.content_pc, .text_on_image ::after{
-    content: '';
-    height: 100%;
-    top: 0;
-    transition: .5s;
-}
-/* .content_pc :hover::after{
-    background: linear-gradient(to bottom, rgba(199, 0, 57, .01) 0, rgba(199, 0, 57, .25) 25%, 
-    rgba(199,0,57,.75) 75%), rgba(199, 0, 57, .95) 100%;
-}
-.text_on_image{
-    transform: all .5 cubic-bezier(.13,.62,.81,.91) 0s;
-} */
+
 ul li {
     list-style: none;
 }
-hr{
+.line hr{
     /* Tạo CSS cho đường thẳng giữa PC và Laptop */
     margin:auto;
     text-align: center;
@@ -43,6 +25,7 @@ hr{
     color: black;
     border: 5px solid black;
     border-radius: 5px;
+    
 }
 /* Header */
 .header{
@@ -54,11 +37,15 @@ hr{
 }
 .menu{
     height: 135px;
-    background-image: linear-gradient(to bottom, #000000, #00000054);
+    background-image: linear-gradient(to bottom, #000000, rgba(0, 0, 0, 0.329));
     /* Chỉnh màu nền cho menu */
     display: flex;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 700;
+}
+.menu .sitcky ul li a {
+   background-image: linear-gradient(to bottom, #000000, rgba(0, 0, 0, 0.329));
+
 }
 .logo > a >img {
     width: 126px;
@@ -68,13 +55,18 @@ hr{
 }
 .list{
     display: flex;
-    padding: 55px 0 42px 0;
+    padding: 30px 0 42px 0;
     margin: 0 61px 0 74px;
 
 }
 .list > li {
-    padding-right: 45px;
-
+    padding-right: 25px;
+    padding-bottom: 80px;
+    padding-top:25px;
+    padding-left: 20px;
+}
+.menu li:hover{
+    color: rgb(47, 81, 233);
 }
 input[type=text]{
     background-image: url(../Img/Logo/Search.png);
@@ -104,14 +96,45 @@ input[type=text]{
 }
 .learn_more{
     /* CSS phần learn more */
-    width: 357px;
-    height: 93px;
+    display: inline-block;
+    padding: 24px 99px;
     font-size: 30px;
     font-weight: bold;
     border-radius: 20px;
     background-color: #E4E4E4;
+    color: black;
     margin-top: 46px;
+    transition: .5s;
+    overflow: hidden;
+    transform: scaleX(1);
+    
+    
 }
+.content a:hover{
+    transform: translate(0, -10px);
+    transition: 0.3s;
+    position: relative;
+    color: white;
+} 
+.content a::after{
+    content: '';
+    position: absolute;
+    right: 360px;
+    bottom: 70px;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background: linear-gradient(60deg, rgba(33, 102, 207, 0.986), rgba(17, 158, 168, 0.979));
+   transition: 0.5s;
+    overflow: hidden;
+    z-index: -1;
+   
+}
+.content a:hover::after{
+    right: 0;
+    bottom: 0;
+}
+
 
 /* main */
 .main {
@@ -145,35 +168,87 @@ color: #2D44BF;
 .text_on_image{
      /* Chữ hiển thị trên bức ảnh */
     position: absolute;
-    top: 50%;
-    left: 40%;
-    transform: translate(-50%,-50%);
+    top: 43%;
+    left: 15%;
     z-index: 1;
     color: #FFF9F9;
     font-size: 40px;
     font-weight: bold;
+    transform-origin: top left;
+    opacity: 0; 
+    transition:  transform 0.2s ease-in-out 0.2s, opacity 0.2s ease-in-out 0.2s;
 }
+.content_pc:hover .text_on_image{
+    opacity: 1;
+    transform: translate(0, 0); 
+    transition-delay: 0s;
+}
+
 .view_more1{
     /* CSS button view more */
-    width: 357px;
-    height: 93px;
+    display: inline-block;
+    padding: 24px 99px;
     font-size: 30px;
     font-weight: bold;
     border-radius: 20px;
+    color: black;
     background-color: #000000;
-    color: white;
+    color: rgb(211, 211, 211);
     margin: 57.5px;
+    transition: .5s;
+    overflow: hidden;
+    transform: scaleX(1);
 }
-.overlay_color{
-    /* Cái màu nền ở những cái ảnh */
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient( 112deg,  #00000080 63% , transparent 15%);
+.button_view1 a:hover{
+    transform: translate(0, -10px);
+    transition: 0.3s;
+    position: relative;
+    color: rgb(255, 255, 255);
+} 
+.button_view1 a::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 360px;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background: linear-gradient(60deg, rgba(33, 172, 207, 0.986), rgba(18, 21, 184, 0.979));
+   transition: 0.5s;
+    overflow: hidden;
+    z-index: -1;
+   
+}
+.button_view1 a:hover::after{
+    right: 0;
+}
 
+/* Hiệu ứng hình nền */
+.overlay_color  {
+    /* Cái màu nền ở những cái ảnh */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: top left;
+    transform: translate(-5%, -5%);
+    opacity: 0;
+    background-image: linear-gradient( 112deg,  #00000080 63% , transparent 15%);
+    transition:  transform 0.3s ease-in-out 0.2s, opacity 0.3s ease-in-out 0.2s;
 }
+.content_pc:hover .overlay_color{
+    opacity: 1;
+    transform: translate(0, 0); 
+    transition-delay: 0s;
+}
+.content_laptop:hover .overlay_color{
+    opacity: 1;
+    transform: translate(0, 0); 
+    transition-delay: 0s;
+}
+
+
 /* Laptop */
 .laptop{
     padding-top: 56px;
@@ -196,25 +271,61 @@ color: #2D44BF;
 .text_on_image2{
     /* Chữ hiển thị trên bức ảnh */
     position: absolute;
-    top: 50%;
-    left: 39%;
-    transform: translate(-50%,-50%);
+    top: 40%;
+    left: 3%;
     z-index: 1;
     color: #FFF9F9;
     font-size: 40px;
     font-weight: bold;
+    transform-origin: top left;
+    opacity: 0; 
+    transition:  transform 0.2s ease-in-out 0.2s, opacity 0.2s ease-in-out 0.2s;
 }
+.content_laptop:hover .text_on_image2{
+    opacity: 1;
+    transform: translate(0, 0); 
+    transition-delay: 0s;
+}
+
 .view_more2{
     /* CSS button view more */
-    width: 357px;
-    height: 93px;
+    display: inline-block;
+    padding: 24px 99px;
     font-size: 30px;
     font-weight: bold;
     border-radius: 20px;
+    color: black;
     background-color: #000000;
-    color: white;
+    color: rgb(211, 211, 211);
     margin: 59px 0 103px;
+    transition: .5s;
+    overflow: hidden;
+    transform: scaleX(1);
 }
+.button_view2 a:hover{
+    transform: translate(0, -10px);
+    transition: 0.3s;
+    position: relative;
+    color: rgb(255, 255, 255);
+} 
+.button_view2 a::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 360px;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background: linear-gradient(60deg, rgba(33, 172, 207, 0.986), rgba(18, 21, 184, 0.979));
+   transition: 0.5s;
+    overflow: hidden;
+    z-index: -1;
+   
+}
+.button_view2 a:hover::after{
+    right: 0;
+}
+
 /* nav */
 .nav{   
     font-size: 0;
@@ -242,7 +353,7 @@ color: #2D44BF;
     text-align: left;
     width: 770px;
     margin: 0 auto;
-    
+    padding-bottom: 20px;
 }
 
 /* more */
@@ -271,27 +382,47 @@ color: #2D44BF;
     position: relative;
     display: inline-block;  
 }
+
 .text_on_image3{
     /* Chữ hiển thị trên bức ảnh */
+    width: 200px;
     position: absolute;
-    top: 50%;
-    left: 35%;
-    transform: translate(-50%,-50%);
+    top: 15%;
+    left: 5%;
     z-index: 1;
     color: #FFF9F9;
     font-size: 32px;
     font-weight: bold;
+    transform-origin: top left;
+    opacity: 0; 
+    transition:  transform 0.2s ease-in-out 0.2s, opacity 0.2s ease-in-out 0.2s;
 }
-.overlay_color1{
-    /* Cái màu nền ở những cái ảnh */
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient( 117deg,  #00000080 70% , transparent 0%);
+.content_more:hover .text_on_image3{
+    opacity: 1;
+    transform: translate(0, 0); 
+    transition-delay: 0s;
+}
 
+.overlay_color1  {
+    /* Cái màu nền ở những cái ảnh */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: top left;
+    transform: translate(-5%, -5%);
+    opacity: 0;
+    background-image: linear-gradient( 112deg,  #00000080 63% , transparent 15%);
+    transition:  transform 0.3s ease-in-out 0.2s, opacity 0.3s ease-in-out 0.2s;
 }
+.content_more:hover .overlay_color1{
+    opacity: 1;
+    transform: translate(0, 0); 
+    transition-delay: 0s;
+}
+
+
 /* footer */
 .footer{
     background-color: #1C1C1C;
@@ -312,7 +443,9 @@ color: #2D44BF;
     grid-template-rows: auto ;
 
     justify-content: space-evenly;
-
+}
+.last li  :hover{
+color: #293fbd;
 }
 
 /* social */
