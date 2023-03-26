@@ -17,37 +17,53 @@
 
 </head>
 <body>
-    <script src="landingpage.js"></script>
+   
     <div class="container">
         <!-- Phần ảnh với menu -->
-        <div class="header">
-            <div class="menu">
+        <header>
+            
                 <div class="logo">
                     <a href="#" alt="Menu">
                 <img src="../Img/Logo/logo_unicorn.png" alt="logo">
                     </a>                 
                 </div>          
-                <ul class="list">
+                <ul class="menu">
                     <li> <a href="#">Home</a> </li>
-                    <li> <a href="#">GAMING PCs</a> </li>
-                    <li> <a href="#">WORKSATION PCs</a> </li>
+                    <li> <a href="#">Gaming PC</a> </li>
+                    <li> <a href="#">Worksation PC</a> </li>
                     <li> <a href="#">About Us</a> </li>
                     <li> <a href="#"> Help</a></li>
                     <li> <a href="#"> More</a></li>
                 </ul>
-                <form action="" method="post">
-                    <input type="text" placeholder="Search">
-                </form>
-                
-            </div>
-            <div class="content">
-                <div class="slogan">
+            
+                 
+        </header>       
+              
+            
+            <section class="content">
+                <!-- <button type="submit"class="prev"></button>
+                <button type="submit" class="next"></button> -->
+                <div class="slider">
+                 <div class="slider-image active test1  "> 
                     <h1>BUILD PC <br>MORE SIMPLE</h1>
-                    
+                <a href="#" class="learn_more">Learn more</a>    
                 </div>
-              <a href="#" class="learn_more">Learn more</a>
-            </div>
-        </div>
+                <div class="slider-image test2">
+
+                </div>
+                <div class="slider-image test3">
+                    
+                </div>   
+                </div>
+                
+
+                <div class="slider-nav">
+                    <button class="slider-nav-item active" data-slide="1"></button>
+                    <button class="slider-nav-item" data-slide="2"></button>
+                    <button class="slider-nav-item" data-slide="3"></button>
+                </div>
+            </section>
+        
         <!-- Phần giới thiệu PC -->
         <div class="main">
             <!-- Giới thiệu về PC -->
@@ -262,6 +278,6 @@
                 </div>
             </div>
         </div>
-        
+    <script src="landingpage.js"></script>
 </body>
 </html>
