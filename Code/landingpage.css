@@ -28,74 +28,132 @@ ul li {
     
 }
 /* Header */
-.header{
-    background-image: url(../Img/Background/Background_Content/Main_content.png);
-    background-repeat: no-repeat;
-    height: 1335px;
-    width: 100%;
-    color: #ECECEC;
-}
-.menu{
-    height: 135px;
+
+header{
+    z-index: 999;
+    position: fixed;
+    top: 0;
+   
     background-image: linear-gradient(to bottom, #000000, rgba(0, 0, 0, 0.329));
     /* Chỉnh màu nền cho menu */
     display: flex;
-    font-size: 25px;
-    font-weight: 700;
-}
-.menu .sitcky ul li a {
-   background-image: linear-gradient(to bottom, #000000, rgba(0, 0, 0, 0.329));
+    justify-content: space-between;
+    align-items: center;
 
+    height: 135px;
+    width: 100%;
+    padding: 20px 100px;
+    transition: .6s;
 }
-.logo > a >img {
+
+header.sticky{
+    background:linear-gradient(to bottom, rgb(0, 81, 255), rgba(7, 186, 231, 0.705));
+    padding: 15px 100px;
+}
+.logo img {
+    width: 100px;
+    position:absolute;
+    padding: 10px 0;
+    
+}
+.logo {
     width: 126px;
-    height: 97px;
-    margin: 23px 0 0 73px;
     
 }
-.list{
+header .menu{
     display: flex;
-    padding: 30px 0 42px 0;
-    margin: 0 61px 0 74px;
+    position: relative;
+    justify-content: center;
+    padding: 2rem;
 
 }
-.list > li {
-    padding-right: 25px;
-    padding-bottom: 80px;
-    padding-top:25px;
-    padding-left: 20px;
-}
-.menu li:hover{
-    color: rgb(47, 81, 233);
-}
-input[type=text]{
-    background-image: url(../Img/Logo/Search.png);
-    background-repeat: no-repeat;
-    background-position: 340px 12px;
+header .menu a{
+    color: #fff;
+    font-size: 1.75rem;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0 2rem;
+    transition: 0.3s;
+    text-transform: uppercase;
+ 
+  }
+  
+  header .menu a:hover{
+    color: #11e2d1e7;
+  }
 
-    height: 70px;
-    width: 400px;
-
-    font-size: 32px;
-    font-weight: 700;
-    color: #AFADAD;
-    border-radius: 30px;
-    
-    padding: 0 30px 0 40px;
-    margin: 36px;
-    
-}
 /* content */
 .content{
-    margin-top: 436px;
+    position: relative;
+    display: flex;
+    height: 100vh;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
     text-align: center;  
+    overflow: hidden;
 }
 .content h1{
+    color: white;
+    padding-top: 15%;
     font-weight: bold;
     font-size: 96px;
+    
 }
+
+.test1{
+    width: 100%;
+    background-image: url(../Img/Background/Background_Content/Main_content.png);
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+.test2{
+    width: 100%;
+    background-image: url(../Img/Background/Background_Content/1.jpg);
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+.test3{
+    width: 100%;
+    background-image: url(../Img/Background/Background_Content/2.jpg);
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+.slider{
+    display: grid;
+    grid-template-columns: repeat(3, 100%);
+    flex: 1 0 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slider-nav {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+  }
+.slider-nav-item {
+    cursor: pointer;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  border: none;
+  opacity: .3;
+  background-color: #ccc;
+  margin: 0 20px;
+  transition: 0.3s ease-in-out;
+}
+.slider-nav-item.active {
+    opacity: 1;
+  }
+
+ /* CSS phần learn more */
 .learn_more{
-    /* CSS phần learn more */
+   
     display: inline-block;
     padding: 24px 99px;
     font-size: 30px;
@@ -103,20 +161,20 @@ input[type=text]{
     border-radius: 20px;
     background-color: #E4E4E4;
     color: black;
-    margin-top: 46px;
+    margin-top: 3rem;
     transition: .5s;
     overflow: hidden;
     transform: scaleX(1);
     
     
 }
-.content a:hover{
+.content .learn_more:hover{
     transform: translate(0, -10px);
     transition: 0.3s;
     position: relative;
     color: white;
 } 
-.content a::after{
+.content .learn_more::after{
     content: '';
     position: absolute;
     right: 360px;
@@ -127,10 +185,9 @@ input[type=text]{
     background: linear-gradient(60deg, rgba(33, 102, 207, 0.986), rgba(17, 158, 168, 0.979));
    transition: 0.5s;
     overflow: hidden;
-    z-index: -1;
-   
+    z-index: -1; 
 }
-.content a:hover::after{
+.content .learn_more:hover::after{
     right: 0;
     bottom: 0;
 }
